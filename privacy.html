@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CalorieLens — Privacy Policy</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
+    .updated { color: #666; font-size: 0.9rem; margin-bottom: 40px; }
+    h2 { font-size: 1.2rem; font-weight: 700; margin: 40px 0 12px; color: #111; }
+    h3 { font-size: 1rem; font-weight: 600; margin: 24px 0 8px; color: #333; }
+    p { margin-bottom: 12px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid #e5e5e5; margin: 40px 0; }
+    a { color: #e05c4b; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e5e5e5; }
+    th { background: #f7f7f7; font-weight: 600; }
+    strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <h1>CalorieLens Privacy Policy</h1>
+  <p class="updated">Last updated: June 3, 2026</p>
+
+  <p>CalorieLens ("we", "our", or "us") is operated by Donggi Yang. This Privacy Policy explains what information we collect when you use the CalorieLens iOS app, how we use it, and your rights regarding that information.</p>
+
+  <hr />
+
+  <h2>1. Information We Collect</h2>
+
+  <h3>Account Information</h3>
+  <p>When you sign in with Google or Apple, we receive and store:</p>
+  <ul>
+    <li>Your email address</li>
+    <li>Your display name</li>
+    <li>Your profile picture URL (Google only)</li>
+  </ul>
+  <p>We do not receive your Google or Apple password. Authentication is handled entirely by Google Sign-In and Sign in with Apple.</p>
+
+  <h3>Meal Photos</h3>
+  <p>When you photograph a meal for calorie analysis:</p>
+  <ul>
+    <li>Your photo is transmitted over HTTPS to our server and then forwarded to OpenAI's API for analysis.</li>
+    <li><strong>We do not permanently store your meal photos.</strong> Photos are held in memory only for the duration of the API call and are immediately discarded after the response is received.</li>
+    <li>OpenAI processes the image under their own <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a>. Images submitted via the API are not used to train OpenAI models by default (as of the date of this policy).</li>
+  </ul>
+
+  <h3>Health &amp; Nutrition Data</h3>
+  <ul>
+    <li><strong>Calorie and macro entries</strong> (calories, protein, carbs, fat) you save are stored in our database, associated with your account.</li>
+    <li><strong>Body metrics</strong> (height, weight, birth year, gender, activity level, goal) you enter during onboarding or in Settings are stored in our database to personalize your calorie goal.</li>
+    <li><strong>Weight log entries</strong> you add are stored in our database.</li>
+    <li>If you enable <strong>Apple Health Sync</strong>, your meal nutrition data and weight entries are written to Apple Health on your device. This data goes directly from the app to HealthKit and is never transmitted to our servers beyond what you explicitly save.</li>
+    <li>We never sell or share your health or nutrition data with third parties.</li>
+  </ul>
+
+  <h3>Usage Data</h3>
+  <p>We log the AI model used, token counts, and estimated cost for each meal analysis. This data is associated with your account and is used only for internal cost monitoring and quota management. It is not shared externally.</p>
+
+  <h3>Streak &amp; Goal Data</h3>
+  <p>Your daily logging streaks, longest streak, and daily calorie goal are stored in our database to power the streak and progress features.</p>
+
+  <h3>Push Notification Tokens</h3>
+  <p>If you grant notification permission, local notifications are scheduled on-device only. We do not currently collect or transmit push notification tokens to our servers.</p>
+
+  <hr />
+
+  <h2>2. How We Use Your Information</h2>
+
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Email, name, picture</td><td>Account identity; display in the app</td></tr>
+      <tr><td>Meal entries &amp; macros</td><td>Calorie history, trend charts, weekly summary</td></tr>
+      <tr><td>Body metrics</td><td>TDEE calculation; personalized calorie goal</td></tr>
+      <tr><td>Weight logs</td><td>Weight trend chart</td></tr>
+      <tr><td>AI usage logs</td><td>Quota enforcement; internal cost tracking</td></tr>
+      <tr><td>Streak data</td><td>Streak counter display; friend streak sharing</td></tr>
+    </tbody>
+  </table>
+
+  <p>We do not use your data for advertising targeting, sell it to data brokers, or share it with any third party except as described in Section 3.</p>
+
+  <hr />
+
+  <h2>3. Third-Party Services</h2>
+
+  <h3>OpenAI</h3>
+  <p>Meal photos and a text prompt describing the image are sent to OpenAI's API for calorie and macro estimation. OpenAI's use of this data is governed by their <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a> and <a href="https://openai.com/policies/api-data-usage-policies">API Data Usage Policies</a>.</p>
+
+  <h3>Google Sign-In</h3>
+  <p>Authentication is handled by Google Sign-In SDK. Google's use of sign-in data is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+
+  <h3>Sign in with Apple</h3>
+  <p>Authentication is handled by Apple's Sign in with Apple framework. Apple's use of sign-in data is governed by <a href="https://www.apple.com/privacy/">Apple's Privacy Policy</a>.</p>
+
+  <h3>Google AdMob</h3>
+  <p>Free-tier users see ads served by Google AdMob. AdMob may collect device identifiers and usage data to serve contextually relevant ads, subject to your device's App Tracking Transparency (ATT) consent. You can opt out by upgrading to the Standard plan, which removes all ads. AdMob's data practices are governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+
+  <h3>Apple HealthKit</h3>
+  <p>If you enable Apple Health Sync, nutrition and weight data is written to HealthKit on your device. HealthKit data is managed by Apple and governed by <a href="https://www.apple.com/privacy/docs/Health_Privacy_White_Paper.pdf">Apple's Health Privacy Policy</a>. CalorieLens does not read any data from HealthKit.</p>
+
+  <hr />
+
+  <h2>4. Data Storage &amp; Security</h2>
+  <ul>
+    <li>Your account data and calorie history are stored on servers we operate, hosted on a Virtual Private Server (VPS).</li>
+    <li>All data is transmitted over HTTPS (TLS 1.2+).</li>
+    <li>Passwords are never stored — we use token-based authentication only.</li>
+    <li>JWT tokens used for API authentication are stored in your device's Keychain and survive app reinstalls.</li>
+  </ul>
+
+  <hr />
+
+  <h2>5. Data Retention</h2>
+  <ul>
+    <li>Your account and all associated data (entries, weight logs, body metrics) are retained as long as your account exists.</li>
+    <li>You can delete all your calorie history at any time from <strong>Settings → Data → Clear All History</strong>.</li>
+    <li>You can permanently delete your account and all associated data at any time from <strong>Settings → Account → Delete Account</strong>. Deletion is immediate and irreversible.</li>
+  </ul>
+
+  <hr />
+
+  <h2>6. Children's Privacy</h2>
+  <p>CalorieLens is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us and we will delete it promptly.</p>
+
+  <hr />
+
+  <h2>7. Your Rights</h2>
+  <p>Depending on your jurisdiction, you may have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> the personal data we hold about you</li>
+    <li><strong>Correct</strong> inaccurate data</li>
+    <li><strong>Delete</strong> your account and all associated data (available in-app via Settings → Account → Delete Account)</li>
+    <li><strong>Export</strong> your calorie history (contact us to request a data export)</li>
+    <li><strong>Opt out</strong> of targeted advertising (upgrade to Standard plan to remove all ads)</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at the address below.</p>
+
+  <hr />
+
+  <h2>8. Contact</h2>
+  <p><strong>Developer:</strong> Donggi Yang<br />
+  <strong>Email:</strong> <a href="mailto:xronace@gmail.com">xronace@gmail.com</a></p>
+
+  <hr />
+
+  <h2>9. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy. For material changes, we will notify you within the app.</p>
+
+</body>
+</html>
