@@ -3,35 +3,328 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CalorieLens</title>
+  <title>CalorieLens — AI Calorie Tracker</title>
+  <meta name="description" content="Snap a photo of any meal. AI instantly estimates calories, protein, carbs, and fat. Download CalorieLens for iPhone." />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #59b880;
+      --coral: #f27361;
+      --bg: #faf9f7;
+      --card: #fff;
+      --text: #1a1a1a;
+      --secondary: #666;
+      --border: #e8e8e8;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Hero ── */
+    .hero {
       background: #fff;
-      color: #1a1a1a;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
       text-align: center;
+      padding: 64px 24px 56px;
+      border-bottom: 1px solid var(--border);
     }
-    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
-    p { color: #666; font-size: 1rem; line-height: 1.6; max-width: 480px; margin-bottom: 32px; }
-    a {
-      color: #e05c4b;
+    .hero img {
+      width: 100px;
+      height: 100px;
+      border-radius: 22px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      max-width: 480px;
+      margin: 0 auto 28px;
+    }
+    .app-store-btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
       text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
       font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: opacity 0.15s;
     }
-    a:hover { text-decoration: underline; }
+    .app-store-btn:hover { opacity: 0.8; }
+
+    /* ── Feature pills ── */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 36px 24px 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 0.88rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .pill .icon { font-size: 1rem; }
+
+    /* ── Layout wrapper ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Section headings ── */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 48px 0 16px;
+      color: var(--text);
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* ── FAQ ── */
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    details summary {
+      cursor: pointer;
+      padding: 18px 20px;
+      font-weight: 600;
+      font-size: 0.97rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--secondary);
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    details[open] summary::after { content: "−"; }
+    details .answer {
+      padding: 0 20px 18px;
+      color: var(--secondary);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin-top: -1px;
+      padding-top: 16px;
+    }
+    details .answer a { color: var(--coral); text-decoration: none; }
+    details .answer a:hover { text-decoration: underline; }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(89,184,128,0.08) 0%, rgba(89,184,128,0.04) 100%);
+      border: 1px solid rgba(89,184,128,0.3);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .contact-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      color: var(--secondary);
+      font-size: 0.93rem;
+      margin-bottom: 18px;
+    }
+    .email-btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 26px;
+      border-radius: 100px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .email-btn:hover { opacity: 0.85; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--secondary);
+    }
+    footer a { color: var(--coral); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .sep { margin: 0 10px; }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.75rem; }
+      .hero p { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
-  <img src="/logo.png" alt="CalorieLens" width="120" height="120" style="border-radius: 26px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);" />
-  <h1>CalorieLens</h1>
-  <p>Snap a photo of any meal. AI instantly estimates calories, protein, carbs, and fat.</p>
-  <a href="/privacy.html">Privacy Policy</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="/logo.png" alt="CalorieLens app icon" />
+    <h1>CalorieLens</h1>
+    <p>Snap a photo of any meal. AI instantly estimates calories, protein, carbs, and fat — no manual logging needed.</p>
+    <a class="app-store-btn" href="https://apps.apple.com/app/calorielens/id6744673136">Download on the App Store</a>
+  </section>
+
+  <!-- Feature pills -->
+  <div class="features">
+    <span class="pill"><span class="icon">📸</span> Photo-first logging</span>
+    <span class="pill"><span class="icon">🧠</span> GPT-4o AI analysis</span>
+    <span class="pill"><span class="icon">📊</span> Macros &amp; weekly trends</span>
+    <span class="pill"><span class="icon">🔥</span> Streak tracking</span>
+    <span class="pill"><span class="icon">🍎</span> Apple Health sync</span>
+    <span class="pill"><span class="icon">🤝</span> Buddy system</span>
+  </div>
+
+  <div class="container">
+
+    <!-- Support FAQ -->
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How do I sign in?</summary>
+      <div class="answer">
+        <p>CalorieLens supports <strong>Sign in with Google</strong> and <strong>Sign in with Apple</strong>. Tap either button on the login screen and follow the on-screen steps. No password is created — authentication is handled entirely by Google or Apple.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How many meal analyses do I get per day?</summary>
+      <div class="answer">
+        <p><strong>Free plan:</strong> 3 analyses per day, plus up to +2 bonus analyses earned via referrals (maximum 5/day).<br />
+        <strong>Standard plan ($3.99/month):</strong> 15 analyses per day with no ads.</p>
+        <p style="margin-top:10px;">Your quota resets at midnight in your local time zone each day.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What if the calorie estimate seems wrong?</summary>
+      <div class="answer">
+        <p>The AI estimates calories from the photo, so accuracy depends on lighting, angle, and how clearly all portions are visible. For best results:</p>
+        <ul style="margin: 8px 0 8px 18px;">
+          <li>Photograph the meal from directly above</li>
+          <li>Include a reference object (fork, plate edge) so portions can be judged</li>
+          <li>Add a meal description (e.g. "chicken caesar salad, restaurant portion") to give the AI extra context</li>
+        </ul>
+        <p>You can edit the description and re-analyze, or manually adjust before saving.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I save a meal entry?</summary>
+      <div class="answer">
+        <p>After the analysis completes, review the result and tap <strong>Save &amp; Done</strong>. You can also set a custom "Eaten At" time if you're logging a past meal before saving.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I sync with Apple Health?</summary>
+      <div class="answer">
+        <p>Go to <strong>Settings → Health Sync</strong> and enable the toggle. CalorieLens will write nutrition data (calories, protein, carbs, fat) and weight entries to Apple Health whenever you save them. The app does not read any data from Health.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I earn bonus daily analyses?</summary>
+      <div class="answer">
+        <p>Every account has a unique referral code in <strong>Settings → Plan</strong>. When a friend signs up with your code and completes their first analysis, you receive +1 bonus analysis per day (up to a maximum of +2 from referrals).</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I upgrade to Standard?</summary>
+      <div class="answer">
+        <p>Go to <strong>Settings → Plan → Upgrade to Standard</strong>. The subscription is $3.99/month, billed through the App Store. You can cancel at any time from the App Store subscription settings.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I delete my account and data?</summary>
+      <div class="answer">
+        <p>Go to <strong>Settings → Account → Delete Account</strong>. This permanently deletes your account and all associated data (entries, weight logs, body metrics, streaks). Deletion is immediate and irreversible.</p>
+        <p style="margin-top:8px;">You can also delete individual entries from the History tab by long-pressing a row or tapping into an entry and using the trash icon.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>The app isn't connecting to the server. What should I do?</summary>
+      <div class="answer">
+        <p>Check that you have an active internet connection. If the issue persists:</p>
+        <ul style="margin: 8px 0 8px 18px;">
+          <li>Force-quit and relaunch the app</li>
+          <li>Try toggling Airplane Mode off and on</li>
+          <li>If you see a sign-in error, try signing out and back in from Settings</li>
+        </ul>
+        <p>If none of these help, <a href="mailto:xronace@gmail.com">contact support</a> and include your device model and iOS version.</p>
+      </div>
+    </details>
+
+    <!-- Contact -->
+    <h2 class="section-title">Contact Support</h2>
+
+    <div class="contact-card">
+      <h3>We're here to help</h3>
+      <p>Have a question not covered above, or found a bug? Send us an email and we'll respond within 1–2 business days.</p>
+      <a class="email-btn" href="mailto:xronace@gmail.com">Email Support</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2026 Donggi Yang</span>
+    <span class="sep">·</span>
+    <a href="/privacy.html">Privacy Policy</a>
+    <span class="sep">·</span>
+    <a href="mailto:xronace@gmail.com">xronace@gmail.com</a>
+  </footer>
+
 </body>
 </html>
