@@ -98,6 +98,44 @@
       margin-bottom: 10px;
     }
 
+    /* ── Getting-started steps ── */
+    .steps { counter-reset: step; list-style: none; }
+    .steps li {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px 16px 62px;
+      margin-bottom: 10px;
+    }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 16px; top: 16px;
+      width: 32px; height: 32px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .steps li strong { display: block; margin-bottom: 2px; font-size: 0.98rem; }
+    .steps li span { color: var(--secondary); font-size: 0.92rem; }
+
+    /* ── Feature guide cards ── */
+    .guide { display: flex; gap: 14px; align-items: flex-start; }
+    .guide .guide-icon { font-size: 1.5rem; line-height: 1.2; flex-shrink: 0; }
+    .guide h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .guide p { color: var(--secondary); font-size: 0.92rem; }
+    .badge-new {
+      display: inline-block;
+      background: var(--coral); color: #fff;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.4px;
+      padding: 2px 7px; border-radius: 100px;
+      margin-left: 7px; vertical-align: middle; text-transform: uppercase;
+    }
+
     /* ── FAQ ── */
     details {
       background: var(--card);
@@ -201,14 +239,137 @@
   <!-- Feature pills -->
   <div class="features">
     <span class="pill"><span class="icon">📸</span> Photo-first logging</span>
-    <span class="pill"><span class="icon">🧠</span> AI Analysis</span>
+    <span class="pill"><span class="icon">🧠</span> AI analysis</span>
     <span class="pill"><span class="icon">📊</span> Macros &amp; weekly trends</span>
+    <span class="pill"><span class="icon">🔖</span> Saved meals</span>
     <span class="pill"><span class="icon">🔥</span> Streak tracking</span>
+    <span class="pill"><span class="icon">💬</span> AI weekly coaching</span>
+    <span class="pill"><span class="icon">🤝</span> Friends &amp; challenges</span>
+    <span class="pill"><span class="icon">📱</span> Home Screen widget</span>
     <span class="pill"><span class="icon">🍎</span> Apple Health sync</span>
-    <span class="pill"><span class="icon">🤝</span> Buddy system</span>
   </div>
 
   <div class="container">
+
+    <!-- Getting started -->
+    <h2 class="section-title">Getting Started</h2>
+    <ol class="steps">
+      <li>
+        <strong>Sign in</strong>
+        <span>Open CalorieLens and tap <strong>Sign in with Apple</strong> or <strong>Sign in with Google</strong>. No password to create — you're in within seconds.</span>
+      </li>
+      <li>
+        <strong>Set up your goal</strong>
+        <span>A short first-run walkthrough asks for your height, weight, age, activity level and goal, then calculates a personalised daily calorie target using the Mifflin-St Jeor formula. Prefer to set it yourself? Just tap Skip.</span>
+      </li>
+      <li>
+        <strong>Snap your meal</strong>
+        <span>On the <strong>Analyze</strong> tab, take a photo or pick one from your library. Add an optional hint like “large bowl of ramen” for extra accuracy.</span>
+      </li>
+      <li>
+        <strong>Review &amp; save</strong>
+        <span>The AI estimates calories, protein, carbs and fat in a few seconds and gives the meal a health grade (A–D). Adjust the “Eaten At” time if you're logging a past meal, then tap <strong>Save &amp; Done</strong>.</span>
+      </li>
+    </ol>
+
+    <!-- Feature guides -->
+    <h2 class="section-title">Feature Guides</h2>
+
+    <div class="card guide">
+      <span class="guide-icon">📸</span>
+      <div>
+        <h3>Analyze a meal</h3>
+        <p>Photograph your plate from directly above with everything in frame for the best estimate. Add a meal hint for context, then review the calorie and macro breakdown. Not quite right? Edit the description and re-analyze, or adjust the numbers before saving.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">🔖</span>
+      <div>
+        <h3>Saved meals &amp; one-tap re-logging <span class="badge-new">New</span></h3>
+        <p>Eat the same things often? Save any analyzed meal as a template, then re-log it in a single tap from the bookmark icon in the Analyze tab — no new photo or analysis needed, and it doesn't use your daily quota.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">🗓️</span>
+      <div>
+        <h3>History, rings &amp; calendar</h3>
+        <p>The <strong>History</strong> tab shows Apple-Watch-style rings for today's calories and macros against your goals, plus a monthly calendar with a dot on every day you logged. Tap any day to filter the list to just those meals.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">📈</span>
+      <div>
+        <h3>Trends &amp; weekly summary</h3>
+        <p>See your calorie and macro intake charted over the last 7 or 30 days. Each week you get a summary with averages, goal-hit days and streak info — shareable as an image, and delivered as a Sunday digest if notifications are on.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">💬</span>
+      <div>
+        <h3>AI weekly coaching <span class="badge-new">New</span></h3>
+        <p>Open the weekly summary to get a short, personalised coaching note generated from your own week — days logged, average calories, macro balance, goal-hit days and streak — with encouragement and one concrete tip for the week ahead.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">🔥</span>
+      <div>
+        <h3>Streaks</h3>
+        <p>Log at least one meal a day to build your streak — the app tracks your current and longest runs. An optional 8&nbsp;PM reminder nudges you on days you haven't logged yet, so you don't break the chain.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">🤝</span>
+      <div>
+        <h3>Friends &amp; challenges <span class="badge-new">New</span></h3>
+        <p>Add friends with their 8-character invite code (in <strong>Settings → Plan</strong>) to compare streaks and stay accountable. Start group challenges — log-streak, daily-calorie-goal or consecutive-day goals — and track everyone's progress in <strong>Settings → Friends</strong>.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">📱</span>
+      <div>
+        <h3>Home Screen widget <span class="badge-new">New</span></h3>
+        <p>Add the CalorieLens widget for an at-a-glance view of today's calories, your remaining analyses and your current streak — without opening the app. Long-press the Home Screen, tap +, search “CalorieLens”, and choose the small or medium size.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">⚖️</span>
+      <div>
+        <h3>Weight &amp; body metrics</h3>
+        <p>Log your weight over time and watch it charted in <strong>Settings → Weight</strong>. Your body metrics also power the personalised calorie goal, and weight entries can sync to Apple Health.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">🥗</span>
+      <div>
+        <h3>Macros &amp; goals</h3>
+        <p>Choose which nutrients to track (protein, carbs, fat) and set a daily target for each in <strong>Settings → Nutrition Tracking</strong>. Your rings and charts update to match what matters to you.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">🔔</span>
+      <div>
+        <h3>Reminders</h3>
+        <p>Enable optional notifications in <strong>Settings → Notifications</strong>: a daily meal-logging reminder at a time you pick, a streak-at-risk nudge, and the Sunday weekly-summary digest.</p>
+      </div>
+    </div>
+
+    <div class="card guide">
+      <span class="guide-icon">🍎</span>
+      <div>
+        <h3>Apple Health sync</h3>
+        <p>Turn on <strong>Settings → Health Sync</strong> to write your calories, protein, carbs, fat and weight to Apple Health as you log them, keeping all your wellness data in one place. CalorieLens only writes data — it never reads from Health.</p>
+      </div>
+    </div>
 
     <!-- Support FAQ -->
     <h2 class="section-title">Frequently Asked Questions</h2>
@@ -226,6 +387,27 @@
         <p><strong>Free plan:</strong> 3 analyses per day, plus up to +2 bonus analyses earned via referrals (maximum 5/day).<br />
         <strong>Standard plan ($3.99/month):</strong> 15 analyses per day with no ads.</p>
         <p style="margin-top:10px;">Your quota resets at midnight in your local time zone each day.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Do saved meals and re-logging use my daily quota?</summary>
+      <div class="answer">
+        <p>No. Your daily limit applies only to <strong>AI photo analysis</strong>. Re-logging a saved meal, or editing an existing entry, records it instantly and does <strong>not</strong> use one of your daily analyses — so meals you eat often are effectively free to log.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do friends and challenges work?</summary>
+      <div class="answer">
+        <p>Every account has a unique 8-character invite code in <strong>Settings → Plan</strong>. Share it with a friend and add each other to compare current and longest streaks. From <strong>Settings → Friends</strong> you can also start a challenge — a shared goal like logging every day, hitting your calorie target, or building a consecutive-day streak — and track everyone's progress together.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What is AI Weekly Coaching?</summary>
+      <div class="answer">
+        <p>Once a week, CalorieLens generates a short, personalised note from your own data — days logged, average calories, macro balance, goal-hit days and streak — with encouragement and one practical tip. It's created from your weekly stats only and refreshes once per week; you'll find it in the weekly summary.</p>
       </div>
     </details>
 
