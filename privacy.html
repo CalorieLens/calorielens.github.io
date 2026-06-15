@@ -35,7 +35,7 @@
 <body>
 
   <h1>CalorieLens Privacy Policy</h1>
-  <p class="updated">Last updated: June 3, 2026</p>
+  <p class="updated">Last updated: June 15, 2026</p>
 
   <p>CalorieLens ("we", "our", or "us") is operated by Donggi Yang. This Privacy Policy explains what information we collect when you use the CalorieLens iOS app, how we use it, and your rights regarding that information.</p>
 
@@ -65,6 +65,7 @@
     <li><strong>Calorie and macro entries</strong> (calories, protein, carbs, fat) you save are stored in our database, associated with your account.</li>
     <li><strong>Body metrics</strong> (height, weight, birth year, gender, activity level, goal) you enter during onboarding or in Settings are stored in our database to personalize your calorie goal.</li>
     <li><strong>Weight log entries</strong> you add are stored in our database.</li>
+    <li><strong>Saved meals</strong> — meal templates you save for quick re-logging (name, calories, macros, and grade) are stored in our database.</li>
     <li>If you enable <strong>Apple Health Sync</strong>, your meal nutrition data and weight entries are written to Apple Health on your device. This data goes directly from the app to HealthKit and is never transmitted to our servers beyond what you explicitly save.</li>
     <li>We never sell or share your health or nutrition data with third parties.</li>
   </ul>
@@ -74,6 +75,13 @@
 
   <h3>Streak &amp; Goal Data</h3>
   <p>Your daily logging streaks, longest streak, and daily calorie goal are stored in our database to power the streak and progress features.</p>
+
+  <h3>Social Data (Friends &amp; Challenges)</h3>
+  <p>CalorieLens includes optional social features. Each account has a unique invite code. When you connect with a friend (by exchanging invite codes) or join a challenge, we store the connection between your accounts, your challenge participation, and your progress toward shared goals.</p>
+  <p><strong>What other users can see:</strong> friends you add — and other participants in a challenge you join — can see your <strong>display name, profile picture, and streak counts</strong> (current and longest), plus your progress toward a shared challenge goal. They <strong>cannot</strong> see your individual meals, photos, weight, body metrics, or calorie history. Friend connections are mutual and require both people to opt in; you can remove a friend or leave a challenge at any time in <strong>Settings → Friends</strong>.</p>
+
+  <h3>AI Coaching</h3>
+  <p>If you use AI Weekly Coaching, a summary of your <em>aggregated</em> weekly statistics (days logged, average calories, average macros, goal-hit days, and streak) — <strong>not</strong> your photos or individual entries — is sent to OpenAI to generate a short personalized coaching note. The generated note is cached in our database for the current week. See Section 3.</p>
 
   <h3>Push Notification Tokens</h3>
   <p>If you grant notification permission, local notifications are scheduled on-device only. We do not currently collect or transmit push notification tokens to our servers.</p>
@@ -92,7 +100,10 @@
       <tr><td>Body metrics</td><td>TDEE calculation; personalized calorie goal</td></tr>
       <tr><td>Weight logs</td><td>Weight trend chart</td></tr>
       <tr><td>AI usage logs</td><td>Quota enforcement; internal cost tracking</td></tr>
-      <tr><td>Streak data</td><td>Streak counter display; friend streak sharing</td></tr>
+      <tr><td>Streak data</td><td>Streak counter display; visible to friends you add</td></tr>
+      <tr><td>Saved meals</td><td>Quick re-logging of frequent meals</td></tr>
+      <tr><td>Friend &amp; challenge data</td><td>Buddy accountability; shared streaks and challenge progress with people you connect with</td></tr>
+      <tr><td>Weekly stats (aggregated)</td><td>Generating your AI weekly coaching note via OpenAI</td></tr>
     </tbody>
   </table>
 
@@ -103,7 +114,12 @@
   <h2>3. Third-Party Services</h2>
 
   <h3>OpenAI</h3>
-  <p>Meal photos and a text prompt describing the image are sent to OpenAI's API for calorie and macro estimation. OpenAI's use of this data is governed by their <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a> and <a href="https://openai.com/policies/api-data-usage-policies">API Data Usage Policies</a>.</p>
+  <p>Two features use OpenAI's API:</p>
+  <ul>
+    <li><strong>Meal analysis</strong> — your meal photo and a text prompt are sent to OpenAI to estimate calories and macros.</li>
+    <li><strong>AI weekly coaching</strong> — your aggregated weekly statistics (days logged, average calories and macros, goal-hit days, streak) are sent to OpenAI to generate a short coaching note. No photos or individual entries are sent for coaching.</li>
+  </ul>
+  <p>OpenAI's use of this data is governed by their <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a> and <a href="https://openai.com/policies/api-data-usage-policies">API Data Usage Policies</a>. Data submitted via the OpenAI API is not used to train their models by default (as of the date of this policy).</p>
 
   <h3>Google Sign-In</h3>
   <p>Authentication is handled by Google Sign-In SDK. Google's use of sign-in data is governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
@@ -133,7 +149,7 @@
   <ul>
     <li>Your account and all associated data (entries, weight logs, body metrics) are retained as long as your account exists.</li>
     <li>You can delete all your calorie history at any time from <strong>Settings → Data → Clear All History</strong>.</li>
-    <li>You can permanently delete your account and all associated data at any time from <strong>Settings → Account → Delete Account</strong>. Deletion is immediate and irreversible.</li>
+    <li>You can permanently delete your account and all associated data — entries, weight logs, body metrics, saved meals, friend connections, challenge participation, and your AI coaching note — at any time from <strong>Settings → Account → Delete Account</strong>. Deletion is immediate and irreversible.</li>
   </ul>
 
   <hr />
