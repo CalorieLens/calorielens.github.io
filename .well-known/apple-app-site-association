@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["LAYY7258K6.com.xronocore.calorielens"],
+        "components": [
+          { "/": "/invite", "comment": "Invite link — opens CalorieLens to add-friend" },
+          { "/": "/invite/*", "comment": "Invite link with subpath" }
+        ]
+      }
+    ]
+  }
+}

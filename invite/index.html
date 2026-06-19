@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Add me on CalorieLens</title>
+  <meta name="apple-itunes-app" content="app-argument=https://calorielens.github.io/invite">
+  <style>
+    :root { --green:#5BAF8F; --green-d:#3E866C; --cream:#F5F1E8; --ink:#2B2A28; --muted:#7A756C; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","Segoe UI",sans-serif;
+           background:linear-gradient(160deg,#5BAF8F 0%,#3E866C 100%); color:var(--ink);
+           min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card { background:var(--cream); border-radius:28px; max-width:420px; width:100%; padding:40px 28px;
+            text-align:center; box-shadow:0 24px 60px rgba(0,0,0,.25); }
+    img.logo { width:84px; height:84px; border-radius:20px; margin-bottom:18px; }
+    h1 { font-size:26px; margin:0 0 6px; }
+    p.sub { color:var(--muted); margin:0 0 24px; font-size:16px; }
+    .codebox { background:#fff; border:2px dashed var(--green); border-radius:16px; padding:16px;
+               font-size:30px; font-weight:800; letter-spacing:3px; color:var(--green-d); margin-bottom:24px; }
+    .btn { display:block; text-decoration:none; font-weight:700; font-size:17px; padding:16px;
+           border-radius:16px; margin:10px 0; }
+    .btn-primary { background:var(--green); color:#fff; }
+    .btn-secondary { background:#fff; color:var(--green-d); border:2px solid var(--green); }
+    .note { color:var(--muted); font-size:13px; margin-top:18px; line-height:1.5; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="/logo.png" alt="CalorieLens">
+    <h1>Add me on CalorieLens</h1>
+    <p class="sub">Snap a photo, get instant AI calorie tracking — together.</p>
+    <div class="codebox" id="code">—</div>
+    <a class="btn btn-secondary" id="openApp" href="#">Open in CalorieLens</a>
+    <!-- TODO: replace APPSTORE_ID with the real numeric App Store ID -->
+    <a class="btn btn-primary" id="appstore" href="https://apps.apple.com/app/idAPPSTORE_ID">Download on the App Store</a>
+    <p class="note">Get the app, then this code adds you as a friend. Have the app already? Tap “Open in CalorieLens”.</p>
+  </div>
+  <script>
+    (function () {
+      var ref = new URLSearchParams(location.search).get('ref') || '';
+      ref = ref.replace(/[^A-Za-z0-9]/g, '').toUpperCase().slice(0, 12);
+      if (ref) {
+        document.getElementById('code').textContent = ref;
+        document.getElementById('openApp').href = 'calorielens://invite?ref=' + ref;
+      } else {
+        document.getElementById('code').style.display = 'none';
+        document.getElementById('openApp').style.display = 'none';
+      }
+    })();
+  </script>
+</body>
+</html>
