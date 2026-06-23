@@ -35,7 +35,7 @@
 <body>
 
   <h1>CalorieLens Privacy Policy</h1>
-  <p class="updated">Last updated: June 15, 2026</p>
+  <p class="updated">Last updated: June 23, 2026</p>
 
   <p>CalorieLens ("we", "our", or "us") is operated by Donggi Yang. This Privacy Policy explains what information we collect when you use the CalorieLens iOS app, how we use it, and your rights regarding that information.</p>
 
@@ -63,7 +63,8 @@
   <h3>Health &amp; Nutrition Data</h3>
   <ul>
     <li><strong>Calorie and macro entries</strong> (calories, protein, carbs, fat) you save are stored in our database, associated with your account.</li>
-    <li><strong>Body metrics</strong> (height, weight, birth year, gender, activity level, goal) you enter during onboarding or in Settings are stored in our database to personalize your calorie goal.</li>
+    <li><strong>Body metrics</strong> (height, weight, birth year, gender, activity level, goal, and goal weight) you enter during onboarding or in Settings are stored in our database to personalize your calorie goal.</li>
+    <li><strong>Dietary preferences</strong> (your diet type and any allergies) you optionally enter in Settings are stored in our database. When you analyze a meal, these are included in the prompt sent to OpenAI so the AI can flag conflicts with your diet or allergies. Leave them blank to opt out.</li>
     <li><strong>Weight log entries</strong> you add are stored in our database.</li>
     <li><strong>Saved meals</strong> — meal templates you save for quick re-logging (name, calories, macros, and grade) are stored in our database.</li>
     <li>If you enable <strong>Apple Health Sync</strong>, your meal nutrition data and weight entries are written to Apple Health on your device. This data goes directly from the app to HealthKit and is never transmitted to our servers beyond what you explicitly save.</li>
@@ -116,7 +117,7 @@
   <h3>OpenAI</h3>
   <p>Two features use OpenAI's API:</p>
   <ul>
-    <li><strong>Meal analysis</strong> — your meal photo and a text prompt are sent to OpenAI to estimate calories and macros.</li>
+    <li><strong>Meal analysis</strong> — your meal photo (or, if you log by text, your typed description) and a text prompt are sent to OpenAI to estimate calories and macros. If you have set dietary preferences or allergies, these are included in the prompt so the AI can flag conflicts.</li>
     <li><strong>AI weekly coaching</strong> — your aggregated weekly statistics (days logged, average calories and macros, goal-hit days, streak) are sent to OpenAI to generate a short coaching note. No photos or individual entries are sent for coaching.</li>
   </ul>
   <p>OpenAI's use of this data is governed by their <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a> and <a href="https://openai.com/policies/api-data-usage-policies">API Data Usage Policies</a>. Data submitted via the OpenAI API is not used to train their models by default (as of the date of this policy).</p>
@@ -149,7 +150,7 @@
   <ul>
     <li>Your account and all associated data (entries, weight logs, body metrics) are retained as long as your account exists.</li>
     <li>You can delete all your calorie history at any time from <strong>Settings → Data → Clear All History</strong>.</li>
-    <li>You can permanently delete your account and all associated data — entries, weight logs, body metrics, saved meals, friend connections, challenge participation, and your AI coaching note — at any time from <strong>Settings → Account → Delete Account</strong>. Deletion is immediate and irreversible.</li>
+    <li>You can permanently delete your account and all associated data — entries, weight logs, body metrics, dietary preferences, saved meals, friend connections, challenge participation, and your AI coaching note — at any time from <strong>Settings → Account → Delete Account</strong>. Deletion is immediate and irreversible.</li>
   </ul>
 
   <hr />
