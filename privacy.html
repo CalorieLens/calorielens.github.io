@@ -35,7 +35,7 @@
 <body>
 
   <h1>CalorieLens Privacy Policy</h1>
-  <p class="updated">Last updated: June 23, 2026</p>
+  <p class="updated">Last updated: July 13, 2026</p>
 
   <p>CalorieLens ("we", "our", or "us") is operated by Donggi Yang. This Privacy Policy explains what information we collect when you use the CalorieLens iOS app, how we use it, and your rights regarding that information.</p>
 
@@ -53,11 +53,19 @@
   <p>We do not receive your Google or Apple password. Authentication is handled entirely by Google Sign-In and Sign in with Apple.</p>
 
   <h3>Meal Photos</h3>
-  <p>When you photograph a meal for calorie analysis:</p>
+  <p>When you photograph a meal:</p>
   <ul>
-    <li>Your photo is transmitted over HTTPS to our server and then forwarded to OpenAI's API for analysis.</li>
-    <li><strong>We do not permanently store your meal photos.</strong> Photos are held in memory only for the duration of the API call and are immediately discarded after the response is received.</li>
-    <li>OpenAI processes the image under their own <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a>. Images submitted via the API are not used to train OpenAI models by default (as of the date of this policy).</li>
+    <li><strong>For calorie analysis:</strong> your photo is transmitted over HTTPS to our server and forwarded to OpenAI's API to estimate calories and macros. OpenAI processes the image under their own <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a>; images submitted via the API are not used to train OpenAI models by default (as of the date of this policy).</li>
+    <li><strong>When you save a meal to your history:</strong> the photo is stored on our server so it can appear in your history and sync across your devices. Before storing, we automatically <strong>downscale the image and strip embedded metadata, including any GPS/location data.</strong> Stored meal photos are kept for up to <strong>6 months</strong>, after which they are automatically deleted. You can remove a photo at any time by deleting its meal entry.</li>
+    <li>If you analyze a meal <strong>without saving it</strong>, the photo is not permanently stored — it is discarded after analysis.</li>
+  </ul>
+
+  <h3>Supplements &amp; Vitamins</h3>
+  <ul>
+    <li>Vitamins and supplements you add, and your <strong>intake logs</strong>, are stored in our database and associated with your account, to power supplement tracking, the daily nutrient dashboard, and reminders.</li>
+    <li>If you <strong>scan a supplement label</strong>, text recognition runs <strong>on your device</strong> by default and the label image is <strong>not</strong> transmitted. If on-device recognition can't read the label, you may choose to send the image to OpenAI's API (as with meal analysis) for a more thorough read.</li>
+    <li>To improve the shared product catalog for everyone, product information you scan or enter (product name, brand, serving size, and nutrient facts) may be added to our shared supplement database. This includes <strong>only product facts — never your identity or your intake history.</strong></li>
+    <li>If you enable Apple Health Sync, supplement intake is written to Apple Health on your device.</li>
   </ul>
 
   <h3>Health &amp; Nutrition Data</h3>
@@ -98,6 +106,8 @@
     <tbody>
       <tr><td>Email, name, picture</td><td>Account identity; display in the app</td></tr>
       <tr><td>Meal entries &amp; macros</td><td>Calorie history, trend charts, weekly summary</td></tr>
+      <tr><td>Meal photos</td><td>Attach to your meal history; sync across your devices</td></tr>
+      <tr><td>Supplements &amp; intake logs</td><td>Supplement tracking; daily nutrient dashboard; reminders</td></tr>
       <tr><td>Body metrics</td><td>TDEE calculation; personalized calorie goal</td></tr>
       <tr><td>Weight logs</td><td>Weight trend chart</td></tr>
       <tr><td>AI usage logs</td><td>Quota enforcement; internal cost tracking</td></tr>
@@ -115,9 +125,10 @@
   <h2>3. Third-Party Services</h2>
 
   <h3>OpenAI</h3>
-  <p>Two features use OpenAI's API:</p>
+  <p>OpenAI's API is used for:</p>
   <ul>
     <li><strong>Meal analysis</strong> — your meal photo (or, if you log by text, your typed description) and a text prompt are sent to OpenAI to estimate calories and macros. If you have set dietary preferences or allergies, these are included in the prompt so the AI can flag conflicts.</li>
+    <li><strong>Supplement label scanning (fallback only)</strong> — label recognition runs on your device by default. Only if on-device recognition can't read a label, and you choose the more thorough option, is the label image sent to OpenAI.</li>
     <li><strong>AI weekly coaching</strong> — your aggregated weekly statistics (days logged, average calories and macros, goal-hit days, streak) are sent to OpenAI to generate a short coaching note. No photos or individual entries are sent for coaching.</li>
   </ul>
   <p>OpenAI's use of this data is governed by their <a href="https://openai.com/policies/privacy-policy">Privacy Policy</a> and <a href="https://openai.com/policies/api-data-usage-policies">API Data Usage Policies</a>. Data submitted via the OpenAI API is not used to train their models by default (as of the date of this policy).</p>
@@ -132,13 +143,14 @@
   <p>Free-tier users see ads served by Google AdMob. AdMob may collect device identifiers and usage data to serve contextually relevant ads, subject to your device's App Tracking Transparency (ATT) consent. You can opt out by upgrading to the Standard plan, which removes all ads. AdMob's data practices are governed by <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
 
   <h3>Apple HealthKit</h3>
-  <p>If you enable Apple Health Sync, nutrition and weight data is written to HealthKit on your device. HealthKit data is managed by Apple and governed by <a href="https://www.apple.com/privacy/docs/Health_Privacy_White_Paper.pdf">Apple's Health Privacy Policy</a>. CalorieLens does not read any data from HealthKit.</p>
+  <p>If you enable Apple Health Sync, nutrition (including supplement intake) and weight data is written to HealthKit on your device. HealthKit data is managed by Apple and governed by <a href="https://www.apple.com/privacy/docs/Health_Privacy_White_Paper.pdf">Apple's Health Privacy Policy</a>. CalorieLens does not read any data from HealthKit.</p>
 
   <hr />
 
   <h2>4. Data Storage &amp; Security</h2>
   <ul>
-    <li>Your account data and calorie history are stored on servers we operate, hosted on a Virtual Private Server (VPS).</li>
+    <li>Your account data and calorie history are stored on servers we operate.</li>
+    <li>Meal photos are stored in self-hosted, S3-compatible object storage that we operate.</li>
     <li>All data is transmitted over HTTPS (TLS 1.2+).</li>
     <li>Passwords are never stored — we use token-based authentication only.</li>
     <li>JWT tokens used for API authentication are stored in your device's Keychain and survive app reinstalls.</li>
@@ -148,7 +160,8 @@
 
   <h2>5. Data Retention</h2>
   <ul>
-    <li>Your account and all associated data (entries, weight logs, body metrics) are retained as long as your account exists.</li>
+    <li>Your account and all associated data (entries, weight logs, body metrics, supplements, and intake logs) are retained as long as your account exists.</li>
+    <li><strong>Meal photos</strong> attached to your history are automatically deleted after <strong>6 months</strong>. Deleting a meal entry also deletes its photo; clearing your history deletes all of your photos.</li>
     <li>You can delete all your calorie history at any time from <strong>Settings → Data → Clear All History</strong>.</li>
     <li>You can permanently delete your account and all associated data — entries, weight logs, body metrics, dietary preferences, saved meals, friend connections, challenge participation, and your AI coaching note — at any time from <strong>Settings → Account → Delete Account</strong>. Deletion is immediate and irreversible.</li>
   </ul>
